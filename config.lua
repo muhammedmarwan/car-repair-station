@@ -4,8 +4,8 @@ Config.RepairTime = 4000
 Config.EnableSoundEffect = true
 Config.Blips = true -- if you want repair for free, set cost to false
 Config.Stations = { 
-    { x = -36.52, y = -1088.55, z = 26.02, cost = 5000 },
-    { x = -211.15, y = -1323.98, z = 30.49, cost = false },
+    { x = -2174.7021, y = -409.9080, z = 12.9314, cost = 500 }, -- near beach garage
+    { x = 476.3405, y = 5416.8457, z = 671.2228, cost = 500 }, --dnx_chiliad
 }
 Locales = {}
 function _U(str, ...)

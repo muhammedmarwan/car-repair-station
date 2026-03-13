@@ -98,9 +98,11 @@ function FixVehicle(vehicle)
     FreezeEntityPosition(vehicle, true)
     if Config.EnableSoundEffect then TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 5.0, 'car_repair', 0.7) end
     if lib.progressCircle({ duration = Config.RepairTime, label = _U('repair_processing'), position = 'bottom', useWhileDead = false, canCancel = false, disable = { car = true, move = true, combat = true, } }) then
+        local fuelLevel = exports['lc_fuel']:GetFuel(vehicle)
         SetVehicleFixed(vehicle)
         SetVehicleDeformationFixed(vehicle)
         SetVehicleDirtLevel(vehicle, 0.0)
+        exports['lc_fuel']:SetFuel(vehicle, fuelLevel)
         lib.notify({ title = _U('blips_name'), description = _U('repair_finish'), type = 'success' })
     end
     FreezeEntityPosition(vehicle, false)
